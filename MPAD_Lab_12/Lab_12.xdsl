@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network2" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Visit_to_Asia">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Tuberculosis_">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Visit_to_Asia</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Smoking_">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Lung_Cancer_">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Smoking_</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Bronchitis">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Smoking_</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Tuberculosis_or_Lung_Cancer_">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Tuberculosis_ Lung_Cancer_</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="X_Ray_Result">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Tuberculosis_or_Lung_Cancer_</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Dyspnea_">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>Bronchitis Tuberculosis_or_Lung_Cancer_</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 5.0.4722.0 ACADEMIC" name="Visit_to_Asia">
+			<node id="Visit_to_Asia">
+				<name>Visit to Asia</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>154 89 244 158</position>
+			</node>
+			<node id="Tuberculosis_">
+				<name>Tuberculosis?</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>234 196 314 246</position>
+			</node>
+			<node id="Lung_Cancer_">
+				<name>Lung Cancer?</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>425 197 505 247</position>
+			</node>
+			<node id="Smoking_">
+				<name>Smoking?</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>511 106 572 144</position>
+			</node>
+			<node id="Bronchitis">
+				<name>Bronchitis?</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>618 214 695 262</position>
+			</node>
+			<node id="Tuberculosis_or_Lung_Cancer_">
+				<name>Tuberculosis or Lung Cancer?</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>319 278 421 341</position>
+			</node>
+			<node id="X_Ray_Result">
+				<name>X-Ray Result</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>200 372 275 418</position>
+			</node>
+			<node id="Dyspnea_">
+				<name>Dyspnea?</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>487 332 577 389</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="B">
+			<state id="Burglary" />
+			<state id="No_Burglary" />
+			<probabilities>0.019 0.981</probabilities>
+		</cpt>
+		<cpt id="E">
+			<state id="Earthquake" />
+			<state id="No_Earthquake" />
+			<probabilities>0.008200000000000001 0.9918</probabilities>
+		</cpt>
+		<cpt id="A">
+			<state id="Alarm" />
+			<state id="No_Alarm" />
+			<parents>B E</parents>
+			<probabilities>0.95 0.05 0.95 0.05 0.2 0.8 0 1</probabilities>
+		</cpt>
+		<cpt id="R">
+			<state id="Radio" />
+			<state id="No_Radio" />
+			<parents>E</parents>
+			<probabilities>1 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="W">
+			<state id="Call" />
+			<state id="No_Call" />
+			<parents>A</parents>
+			<probabilities>0.9 0.1 0 1</probabilities>
+		</cpt>
+		<decision id="Action">
+			<state id="do_nothing" />
+			<state id="go_home" />
+			<state id="call_police" />
+		</decision>
+		<cpt id="Thief_Caught">
+			<state id="Caught" />
+			<state id="No_Caught" />
+			<parents>A Action</parents>
+			<probabilities>0 1 0.3 0.7 0.8 0.2 0 1 0 1 0 1</probabilities>
+		</cpt>
+		<utility id="Utility">
+			<parents>B Thief_Caught Action</parents>
+			<utilities>100 95 90 0 -5 -10 0 -5 -10 0 -5 -10</utilities>
+		</utility>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 5.0.4722.0 ACADEMIC" name="Holmes">
+			<node id="B">
+				<name>B</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>144 100 246 198</position>
+			</node>
+			<node id="E">
+				<name>E</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>390 101 490 199</position>
+			</node>
+			<node id="A">
+				<name>A</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>262 274 363 370</position>
+			</node>
+			<node id="R">
+				<name>R</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>492 273 592 368</position>
+			</node>
+			<node id="W">
+				<name>W</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>427 485 531 586</position>
+			</node>
+			<textbox>
+				<caption>W:  Phone call from Watson \nA:   Burglary alarm\nR:   Radio news\nB:   Burglary\nE:   Earthquake\nU:   Utility\nAC: Action\nC:   Thief Caught</caption>
+				<font color="000000" name="Arial" size="14" bold="true" />
+				<position>683 116 940 292</position>
+			</textbox>
+			<node id="Utility">
+				<name>U</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>75 283 192 367</position>
+			</node>
+			<node id="Action">
+				<name>AC</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>10 422 105 479</position>
+			</node>
+			<node id="Thief_Caught">
+				<name>C</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>195 488 299 589</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="B">
+			<state id="Burglary" />
+			<state id="No_Burglary" />
+			<probabilities>0.019 0.981</probabilities>
+		</cpt>
+		<cpt id="E">
+			<state id="Earthquake" />
+			<state id="No_Earthquake" />
+			<probabilities>0.008200000000000001 0.9918</probabilities>
+		</cpt>
+		<cpt id="A">
+			<state id="Alarm" />
+			<state id="No_Alarm" />
+			<parents>B E</parents>
+			<probabilities>0.95 0.05 0.95 0.05 0.2 0.8 0 1</probabilities>
+		</cpt>
+		<cpt id="R">
+			<state id="Radio" />
+			<state id="No_Radio" />
+			<parents>E</parents>
+			<probabilities>1 0 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="W">
+			<state id="Call" />
+			<state id="No_Call" />
+			<parents>A</parents>
+			<probabilities>0.9 0.1 0 1</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 5.0.4722.0 ACADEMIC" name="Holmes">
+			<node id="B">
+				<name>B</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>144 100 246 198</position>
+			</node>
+			<node id="E">
+				<name>E</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>390 101 490 199</position>
+			</node>
+			<node id="A">
+				<name>A</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>262 274 363 370</position>
+			</node>
+			<node id="R">
+				<name>R</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>492 273 592 368</position>
+			</node>
+			<node id="W">
+				<name>W</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="16" bold="true" />
+				<position>261 476 365 577</position>
+			</node>
+			<textbox>
+				<caption>W:  Phone call from Watson \nA:   Burglary alarm\nR:   Radio news\nB:   Burglary\nE:   Earthquake</caption>
+				<font color="000000" name="Arial" size="14" bold="true" />
+				<position>683 116 940 226</position>
+			</textbox>
+			<textbox>
+				<caption>Annual probability of burglary per house = 50 / (2 * 1350) = 0.0185 ≈ 0.019. \n\nP(Burglary) = 0.019 \nP(No Burglary) = 1 - 0.019 = 0.981 \n\nDaily probability of an earthquake = 3 / 365 ≈ 0.0082. \n\nP(Earthquake) = 0.0082 \nP(No Earthquake) = 1 - 0.0082 = 0.9918 \n\nAlarm catches 95% of burglaries. \nAlarm triggered by 1 out of 5 earthquakes.\n\nP(Radio News | Earthquake) = 1.0 \nP(Radio News | No Earthquake) = 0.1 (Assume a 10% false report rate) \n\nP(Phone Call | Alarm) = 0.9 (Assume Watson hears it 90% of the time) \nP(Phone Call | No Alarm) = 0.0 (Assume a very low false call rate) \n\n</caption>
+				<font color="000000" name="Arial" size="10" />
+				<position>726 239 1142 559</position>
+			</textbox>
+		</genie>
+	</extensions>
+</smile>

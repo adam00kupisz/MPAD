@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="age">
+			<state id="abow_65" />
+			<state id="below_65" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="cardiovascular_disease">
+			<state id="sick" />
+			<state id="health" />
+			<parents>age</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="death">
+			<state id="dead" />
+			<state id="alive" />
+			<parents>cardiovascular_disease</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 5.0.4722.0 ACADEMIC" name="Respiratory_disease">
+			<node id="age">
+				<name>age</name>
+				<interior color="33cccd" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>217 103 276 146</position>
+			</node>
+			<node id="cardiovascular_disease">
+				<name>cardiovascular disease</name>
+				<interior color="33cccd" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>211 212 306 271</position>
+			</node>
+			<node id="death">
+				<name>death</name>
+				<interior color="33cccd" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>267 300 334 342</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>

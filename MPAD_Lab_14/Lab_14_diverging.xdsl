@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="age">
+			<state id="abow_65" />
+			<state id="below_65" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="COVID">
+			<state id="is_covid" />
+			<state id="no_covid" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="pneumonia">
+			<state id="is_pneumonia" />
+			<state id="no_pneumonia" />
+			<parents>COVID</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="cough">
+			<state id="is_cough" />
+			<state id="no_cough" />
+			<parents>COVID</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="smell_loss">
+			<state id="is_smell" />
+			<state id="no_smell" />
+			<parents>COVID</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="cardiovascular_disease">
+			<state id="sick" />
+			<state id="health" />
+			<parents>age</parents>
+			<probabilities>0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="death">
+			<state id="dead" />
+			<state id="alive" />
+			<parents>cardiovascular_disease COVID</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 5.0.4722.0 ACADEMIC" name="Respiratory_disease">
+			<node id="pneumonia">
+				<name>pneumonia</name>
+				<interior color="33cccd" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>636 534 722 594</position>
+			</node>
+			<node id="cough">
+				<name>cough?</name>
+				<interior color="33cccd" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>380 536 451 581</position>
+			</node>
+			<node id="smell_loss">
+				<name>smell loss?</name>
+				<interior color="33cccd" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>501 536 600 593</position>
+			</node>
+			<node id="age">
+				<name>age</name>
+				<interior color="33cccd" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>284 167 343 210</position>
+			</node>
+			<node id="cardiovascular_disease">
+				<name>cardiovascular disease</name>
+				<interior color="33cccd" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>262 345 357 404</position>
+			</node>
+			<node id="death">
+				<name>death</name>
+				<interior color="33cccd" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>271 538 338 580</position>
+			</node>
+			<node id="COVID">
+				<name>COVID</name>
+				<interior color="33cccd" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>454 370 529 416</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>
